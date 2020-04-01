@@ -12,4 +12,4 @@ print(cars)
 cars.remove("Honda")
 print(cars)
 # Print all of the cars
-print(cars[0::1])
+print(cars[0::1]) #Using step to account for variable list length
