@@ -19,7 +19,7 @@ while is_running:
     elif menu_choice == '2':
         view.toDoData(data.toDoData)
         removeToDo = int(input('Which number would you like to delete?: '))
-        data.toDoData.pop(removeToDo)
+        data.toDoData.pop(removeToDo) #this seems to work in the terminal session but not seeing it effect the data.py file
     elif menu_choice == 'q':
         is_running = False
     else:
