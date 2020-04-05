@@ -15,7 +15,10 @@ while is_running:
         view.toDoData(data.toDoData)
         toDoTitle = str(input('Enter a TODO: '))
         toDoPriority = str(input('Enter a priority ("high", "medium", "low"): '))
-        data.toDoData = {'title': toDoTitle, 'priority': toDoPriority} #This isnt right. missing a [key]
+        data.toDoData.append({
+            'title': toDoTitle,
+            'priority': toDoPriority
+        })
     elif menu_choice == '2':
         view.toDoData(data.toDoData)
         removeToDo = int(input('Which number would you like to delete?: '))
