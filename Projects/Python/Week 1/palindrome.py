@@ -6,4 +6,4 @@ def palindrome(word = str.lower(input("Please enter a word: "))):
         print(word, "is not a palindrome")
 palindrome()
 
-# need to account for special characters and spaces
+# need to account for special characters and spaces 
