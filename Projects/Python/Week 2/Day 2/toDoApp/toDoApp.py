@@ -35,16 +35,18 @@ while True:
         file.write("\n")
   
   elif choice == "2":
-    for index in range(0, len(all_tasks)):
-      print(all_tasks[index].name)
-    completed = int(input("Enter the number for the completed task: "))
+    with open("Python/Week 2/Day 2/toDoApp/todos.txt","r") as file:  
+      tasklist = file.read()
+    print(tasklist)
+    completed = int(input("Enter the number for the completed task: ") + 1)
     all_tasks.pop(completed) #removed from array but not marked complete?
 
 
   elif choice == "3":
-    for index in range(0, len(all_tasks)):
-      a_task = all_tasks[index]
-      print(a_task.name + ' - ' + a_task.priority)
+    with open("Python/Week 2/Day 2/toDoApp/todos.txt","r") as file:  
+      tasklist = file.read()
+    print(tasklist)
 
   elif choice == "q":
+    file.close()
     break
