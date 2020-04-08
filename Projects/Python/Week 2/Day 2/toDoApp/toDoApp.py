@@ -27,7 +27,7 @@ while True:
     task = Task(name, priority)
     all_tasks.append(task)
 
-    with open("Python/Week 2/Day 2/toDoApp/todos.txt","w") as file:
+    with open("Python/Week 2/Day 2/toDoApp/todos.txt","a") as file:
       for index in range(0, len(all_tasks)):
         t = all_tasks[index]
         data =  f"{index + 1} - {t.name} - {t.priority}"
@@ -35,7 +35,7 @@ while True:
         file.write("\n")
   
   elif choice == "2":
-    with open("Python/Week 2/Day 2/toDoApp/todos.txt","r") as file:  
+    with open("Python/Week 2/Day 2/toDoApp/todos.txt","a") as file:  
       tasklist = file.read()
     print(tasklist)
     completed = int(input("Enter the number for the completed task: ") + 1)
