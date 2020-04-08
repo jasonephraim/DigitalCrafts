@@ -1,1 +1,1 @@
-1 - say hello - high
+1 - hello - high

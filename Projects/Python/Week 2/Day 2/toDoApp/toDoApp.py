@@ -43,7 +43,8 @@ while True:
 
   elif choice == "3":
     for index in range(0, len(all_tasks)):
-      print(all_tasks[index].name)
+      a_task = all_tasks[index]
+      print(a_task.name + ' - ' + a_task.priority)
 
   elif choice == "q":
     break
