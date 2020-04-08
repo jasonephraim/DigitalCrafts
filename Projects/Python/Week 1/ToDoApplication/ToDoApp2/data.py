@@ -1,9 +1,14 @@
-example_task = {
-    "description": "Buy milk at the store",
-    "priority": 1
-}
+tasks = []
 
-tasks = [example_task]
+class Task: 
+  def __init__(self, name, priority): 
+    self.name = name
+    self.priority = priority
+    self.completed = False 
+
+  def markAsCompleted(self): 
+    self.completed = True 
+
 
 # priorities
 # 0 = none

@@ -12,10 +12,10 @@ while is_running:
         print('Add Task')
         new_task_description = input("What is the description? ")
         new_task_priority = input("What is the priority (low, med, high)? ")
-        data.tasks.append({
-            "description": new_task_description,
-            "priority": data.convert_wording_to_priority_int(new_task_priority)
-        })
+        new_task_priority = data.convert_wording_to_priority_int(new_task_priority)
+
+        new_task_description = data.Task(new_task_description, new_task_priority)
+        
         print("Task was added successfully")
     elif user_input == '2':
         index_of_task_to_delete = view.select_task('remove')
