@@ -34,7 +34,7 @@ def read_from_file(file_name):
 def table_view():
     tables_file = "Python/Week 2/Pool Table Management App/tables.json"
     table_list = read_from_file(tables_file)
-    print (color.BOLD + "Table Number","Status","\tStart Date and Time","\t\tTotal Playtime" + color.END)
+    print (color.UNDERLINE + "Table Number","Status","\tStart Date and Time","\t\tTotal Playtime" + color.END)
     for table in table_list:
         # format JSON data in terminal
         table_status = ""
@@ -64,7 +64,7 @@ def user_options():
     
     while True:
 
-        choice = input("Pool Table Management App:\n v-view tables\n r-rent\n e-end rental\n q-exit app\n Please enter your choice: ")
+        choice = input(color.UNDERLINE + "Pool Table Management App:\n" + color.END + "v - View current table status\nr - Start new table rental\ne - End current table rental\nq - Quit application\n" + color.BOLD + "Please enter your choice: " + color.END)
 
         if choice == "q":
             return choice
@@ -74,7 +74,6 @@ def user_options():
             
 
 while True:
-    print("** POOL TABLE MANAGEMENT APP STARTED **")
     option = user_options()
 
     if (choice == "q"):
