@@ -2,8 +2,8 @@ import json
 import datetime
 import math
 
-# define pool table class
 
+# define pool table class
 class Table:
     def __init__(self, table_number):
         self.table_number = table_number
@@ -12,13 +12,43 @@ class Table:
         self.table_use_end = ""
         self.table_use_total = 0
 
+# define data tables return function based on source
 def read_from_file(file_name):
     with open(file_name,"r") as file_object:
         tables = json.load(file_object)
         return tables
 
+# define table view
+def table_view():
+    tables_file = "Python/Week 2/Pool Table Management App/tables.json"
+    table_list = read_from_file(tables_file)
+    print ("Table Number\t","Status\t","Start Date and Time\t","Total Playtime")
+    for table in table_list:
+        # format JSON data in terminal
+        table_status = ""
+        table_start_datetime = ""
+        # If there is no start time, set to not occupied
+        if table["start_date_time"] == "":
+            table_status = " - NOT OCCUPIED"
+            print("Table {0} {1}".format(table["table_number"], " - ", table_status))
+        # If there is a start time, set to occupied
+        else:
+            # set counter to 0 and use datetime function to cal
+            minutes_played = 0
+            time_difference = ""
+            time_in_date_time = ""
+
+            table_status = " - OCCUPIED"
+            table_start_datetime = table["start_date_time"]
+
+            # Number of minutes played
+            time_in_date_time = datetime.datetime.strptime(table_start_datetime,"%m/%d/%y %H:%M:%S")
+            time_difference = datetime.datetime.now() - time_in_date_time
+            minutes_played = math.floor(time_difference.total_seconds() / 60)
+            print ("Table {0} {1}\t Start: {2}\t Minutes Played: {3}".format(table["table_number"], table_status, table_start_datetime, minutes_played)) #find way to make JSON display prettier data
+
+# define user options logic
 def user_options():
-    table_state_file_string = "./tables.json"
     
     while True:
 
@@ -28,8 +58,7 @@ def user_options():
             return choice
 
         elif choice =="v":
-            table_list = read_from_file(table_state_file_string)
-            print(table_list) # printing to check we are getting data
+            table_view()
             
 
 while True:
