@@ -1,4 +1,4 @@
-# h1 Pool Table Management Application
+# Pool Table Management Application
 
 You have just been hired by University of Houston as a developer. Your first task is to create a pool table management app which will manage the pool tables in University Center Games Room.
 
