@@ -11,6 +11,18 @@ class Table:
         self.table_use_start = ""
         self.table_use_end = ""
         self.table_use_total = 0
+# colors for text prettiness
+class color:
+    PURPLE = '\033[95m'
+    CYAN = '\033[96m'
+    DARKCYAN = '\033[36m'
+    BLUE = '\033[94m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    RED = '\033[91m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+    END = '\033[0m'
 
 # define data tables return function based on source
 def read_from_file(file_name):
@@ -22,7 +34,7 @@ def read_from_file(file_name):
 def table_view():
     tables_file = "Python/Week 2/Pool Table Management App/tables.json"
     table_list = read_from_file(tables_file)
-    print ("Table Number\t","Status\t","Start Date and Time\t","Total Playtime")
+    print (color.BOLD + "Table Number","Status","\tStart Date and Time","\t\tTotal Playtime" + color.END)
     for table in table_list:
         # format JSON data in terminal
         table_status = ""
@@ -45,7 +57,7 @@ def table_view():
             time_in_date_time = datetime.datetime.strptime(table_start_datetime,"%m/%d/%y %H:%M:%S")
             time_difference = datetime.datetime.now() - time_in_date_time
             minutes_played = math.floor(time_difference.total_seconds() / 60)
-            print ("Table {0} {1}\t Start: {2}\t Minutes Played: {3}".format(table["table_number"], table_status, table_start_datetime, minutes_played)) #find way to make JSON display prettier data
+            print (color.RED + "Table {0} {1}\t Start: {2}\t Minutes Played: {3}".format(table["table_number"], table_status, table_start_datetime, minutes_played) + color.END) #find way to make JSON display prettier data
 
 # define user options logic
 def user_options():
