@@ -80,7 +80,7 @@ def table_view():
         # If there is no start time, set to not occupied
         if table["start_date_time"] == "":
             table_status = " - NOT OCCUPIED"
-            print("Table {0} {1}".format(table["table_number"], " - ", table_status))
+            # print("Table {0} {1}".format(table["table_number"], " - ", table_status))
         # If there is a start time, set to occupied
             table_number_converted = table["table_number"]
             html += "Table" + table_number_converted + table_status + table_start_datetime
@@ -98,7 +98,7 @@ def table_view():
             time_in_date_time = datetime.datetime.strptime(table_start_datetime,"%m/%d/%y %H:%M:%S")
             time_difference = datetime.datetime.now() - time_in_date_time
             minutes_played = math.floor(time_difference.total_seconds() / 60)
-            print (color.RED + "Table {0} {1}\t Start: {2}\t Minutes Played: {3}".format(table["table_number"], table_status, table_start_datetime, minutes_played) + color.END) #find way to make JSON display prettier data
+            # print (color.RED + "Table {0} {1}\t Start: {2}\t Minutes Played: {3}".format(table["table_number"], table_status, table_start_datetime, minutes_played) + color.END) #find way to make JSON display prettier data
             
             table_number_converted = table["table_number"]
             html += "Table " + table_number_converted + table_status + table_start_datetime
