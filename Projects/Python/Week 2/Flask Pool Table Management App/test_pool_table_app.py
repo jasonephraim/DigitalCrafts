@@ -1,5 +1,5 @@
 # Unit tests for the Pool Table Management App
-from pool_table_app import Table
+from main import Table
 import unittest
 class TableTests(unittest.TestCase):
     def setUp(self):
