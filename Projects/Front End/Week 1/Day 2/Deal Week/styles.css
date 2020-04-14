@@ -1,0 +1,17 @@
+.product {
+    display: block;
+    overflow: hidden;
+    /* I'd also normally add an inner div and scale this div and the image to match the outer .deal class div but I can't manipulate the HTML */
+}
+
+.deal {
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.item {
+    margin-top: -17%;
+    max-width: 100%;
+    max-height: 100%;
+}
