@@ -1,0 +1,17 @@
+/* @import "/node_modules/bootstrap/scss/bootstrap.scss"; */
+body {
+  padding-top: 56px;
+}
+
+.footer {
+  margin-top: 3rem;
+}
+
+.navbar {
+  border-bottom: 1px solid #eee;
+}
+
+.article-mosaic-title {
+  padding-top: 5px;
+}
+/*# sourceMappingURL=style.css.map */
